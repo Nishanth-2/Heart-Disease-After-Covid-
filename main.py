@@ -13,10 +13,10 @@ import joblib
 
 data = pd.read_csv('cardio_data.csv')
 X = data.drop(["id","age","gender","height","weight"],axis=1)
-#id is not necessary, age_years is best than age in days,heart disease is not relevant to gender ,height and weight is correlated to bmi
+
 y = data["cardio"]
 
-X_tr,X_te,y_tr,y_te = train_test_split(X,y,test_size=0.1)
+X_tr,X_te,y_tr,y_te = train_test_split(X,y,test_size=0.3)
 
 convalues = ["ap_hi","ap_lo","cholesterol","gluc","smoke","alco","active","age_years","bmi"]
 catvalues = ["bp_category"]
